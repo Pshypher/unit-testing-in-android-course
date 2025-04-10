@@ -24,7 +24,7 @@ public class NegativeNumberValidatorTest {
     @Test
     public void test2() {
         boolean actual = SUT.isNegative(0);
-        Assert.assertThat(actual, is(true));
+        Assert.assertThat(actual, is(false));
     }
 
     @Test
