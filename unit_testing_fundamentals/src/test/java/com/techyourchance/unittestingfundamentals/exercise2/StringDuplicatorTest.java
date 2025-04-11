@@ -21,13 +21,13 @@ public class StringDuplicatorTest {
     }
 
     @Test
-    public void duplicate_singleCharacter_twoSimilarCharactersReturned() {
+    public void duplicate_singleCharacter_duplicateSimilarCharactersReturned() {
         String actual = SUT.duplicate("a");
         assertThat(actual, is("aa"));
     }
 
     @Test
-    public void duplicate_multipleCharacters_twoCopiesOfInputStringWithMultipleCharactersReturned() {
+    public void duplicate_multipleCharacters_duplicateCopiesInputStringReturned() {
         String actual = SUT.duplicate("vignette");
         assertThat(actual, is("vignettevignette"));
 
