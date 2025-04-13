@@ -62,6 +62,9 @@ public class UpdateUsernameUseCaseSyncTest {
         ArgumentCaptor<User> ac = ArgumentCaptor.forClass(User.class);
         SUT.updateUsernameSync(USER_ID, USERNAME);
         verify(mUsersCacheMock).cacheUser(ac.capture());
+        User user = ac.getValue();
+        assertThat(user.getUserId(), is(USER_ID));
+        assertThat(user.getUsername(), is(USERNAME));
     }
 
     // update username failed does not interact with user cache
