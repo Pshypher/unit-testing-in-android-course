@@ -1,11 +1,9 @@
 package com.techyourchance.mockitofundamentals.exercise5;
 
-import static org.hamcrest.CoreMatchers.any;
 import static org.hamcrest.CoreMatchers.instanceOf;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.mockito.Mockito.doThrow;
-import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyNoMoreInteractions;
 import static org.mockito.Mockito.when;
@@ -19,26 +17,27 @@ import com.techyourchance.mockitofundamentals.exercise5.users.UsersCache;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.mockito.ArgumentCaptor;
+import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.List;
 
+@RunWith(MockitoJUnitRunner.class)
 public class UpdateUsernameUseCaseSyncTest {
 
     public static final String USER_ID = "userId";
     public static final String USERNAME = "username";
 
-    UpdateUsernameHttpEndpointSync mUpdateUsernameHttpEndpointSyncMock;
-    UsersCache mUsersCacheMock;
-    EventBusPoster mEventBusPosterMock;
+    @Mock UpdateUsernameHttpEndpointSync mUpdateUsernameHttpEndpointSyncMock;
+    @Mock UsersCache mUsersCacheMock;
+    @Mock EventBusPoster mEventBusPosterMock;
 
     UpdateUsernameUseCaseSync SUT;
 
     @Before
     public void setup() throws NetworkErrorException {
-        mUpdateUsernameHttpEndpointSyncMock = mock(UpdateUsernameHttpEndpointSync.class);
-        mUsersCacheMock = mock(UsersCache.class);
-        mEventBusPosterMock = mock(EventBusPoster.class);
         SUT = new UpdateUsernameUseCaseSync(mUpdateUsernameHttpEndpointSyncMock, mUsersCacheMock, mEventBusPosterMock);
 
         success();
