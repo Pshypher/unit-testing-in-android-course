@@ -1,5 +1,11 @@
 package com.techyourchance.testdrivendevelopment.example11;
 
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.verifyNoMoreInteractions;
+
 import com.techyourchance.testdrivendevelopment.example11.cart.CartItem;
 import com.techyourchance.testdrivendevelopment.example11.networking.CartItemSchema;
 import com.techyourchance.testdrivendevelopment.example11.networking.GetCartItemsHttpEndpoint;
@@ -14,12 +20,6 @@ import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.verifyNoMoreInteractions;
 
 @RunWith(MockitoJUnitRunner.class)
 public class FetchCartItemsManualTestDoublesUseCaseTest {

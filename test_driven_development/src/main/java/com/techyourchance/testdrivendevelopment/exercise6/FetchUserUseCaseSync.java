@@ -1,7 +1,8 @@
 package com.techyourchance.testdrivendevelopment.exercise6;
 
-import org.jetbrains.annotations.Nullable;
 import com.techyourchance.testdrivendevelopment.exercise6.users.User;
+
+import org.jetbrains.annotations.Nullable;
 
 interface FetchUserUseCaseSync {
 
