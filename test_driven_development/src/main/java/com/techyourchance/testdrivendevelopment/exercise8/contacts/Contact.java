@@ -1,5 +1,7 @@
 package com.techyourchance.testdrivendevelopment.exercise8.contacts;
 
+import java.util.Objects;
+
 public class Contact {
 
     private final String mId;
@@ -22,5 +24,16 @@ public class Contact {
 
     public String getImageUrl() {
         return mImageUrl;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof Contact contact)) return false;
+        return Objects.equals(mId, contact.mId) && Objects.equals(mFullName, contact.mFullName) && Objects.equals(mImageUrl, contact.mImageUrl);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(mId, mFullName, mImageUrl);
     }
 }
