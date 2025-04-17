@@ -39,7 +39,7 @@ public class FetchContactsUseCaseTest {
     FetchContactsUseCase.Observer mFetchContactsUseCaseObserverMock1;
     @Mock
     FetchContactsUseCase.Observer mFetchContactsUseCaseObserverMock2;
-    @Captor ArgumentCaptor<List<Contact>> ac;
+    @Captor ArgumentCaptor<List<Contact>> mAcListContact;
     // endregion helper fields
 
     FetchContactsUseCase SUT;
@@ -69,9 +69,9 @@ public class FetchContactsUseCaseTest {
         SUT.registerListener(mFetchContactsUseCaseObserverMock2);
         SUT.getContactsAndNotify(FILTER_TERM);
         // Assert
-        verify(mFetchContactsUseCaseObserverMock1).notifySuccess(ac.capture());
-        verify(mFetchContactsUseCaseObserverMock2).notifySuccess(ac.capture());
-        List<List<Contact>> contacts = ac.getAllValues();
+        verify(mFetchContactsUseCaseObserverMock1).notifySuccess(mAcListContact.capture());
+        verify(mFetchContactsUseCaseObserverMock2).notifySuccess(mAcListContact.capture());
+        List<List<Contact>> contacts = mAcListContact.getAllValues();
         assertThat(contacts.get(0), is(getContacts()));
         assertThat(contacts.get(1), is(getContacts()));
     }
@@ -85,9 +85,9 @@ public class FetchContactsUseCaseTest {
         SUT.unregisterListener(mFetchContactsUseCaseObserverMock2);
         SUT.getContactsAndNotify(FILTER_TERM);
         // Assert
-        verify(mFetchContactsUseCaseObserverMock1).notifySuccess(ac.capture());
+        verify(mFetchContactsUseCaseObserverMock1).notifySuccess(mAcListContact.capture());
         verifyNoMoreInteractions(mFetchContactsUseCaseObserverMock2);
-        assertThat(ac.getValue(), is(getContacts()));
+        assertThat(mAcListContact.getValue(), is(getContacts()));
     }
 
     @Test
