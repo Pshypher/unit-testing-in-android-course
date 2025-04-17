@@ -126,11 +126,16 @@ public class FetchContactsUseCaseTest {
     private void success() {
         doAnswer(invocation -> {
             GetContactsHttpEndpoint.Callback callback = invocation.getArgument(1);
-            List<ContactSchema> contactSchemas = new ArrayList<>();
-            contactSchemas.add(new ContactSchema(ID, FULL_NAME, FULL_PHONE_NUMBER, IMAGE_URL, AGE));
+            List<ContactSchema> contactSchemas = getContactSchemas();
             callback.onGetContactsSucceeded(contactSchemas);
             return null;
         }).when(mGetContactsHttpEndpointMock).getContacts(anyString(), any(GetContactsHttpEndpoint.Callback.class));
+    }
+
+    private List<ContactSchema> getContactSchemas() {
+        List<ContactSchema> contactSchemas = new ArrayList<>();
+        contactSchemas.add(new ContactSchema(ID, FULL_NAME, FULL_PHONE_NUMBER, IMAGE_URL, AGE));
+        return contactSchemas;
     }
 
     private void generalError() {
