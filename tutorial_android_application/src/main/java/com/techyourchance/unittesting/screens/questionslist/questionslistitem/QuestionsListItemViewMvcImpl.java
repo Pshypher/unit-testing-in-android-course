@@ -1,10 +1,11 @@
 package com.techyourchance.unittesting.screens.questionslist.questionslistitem;
 
-import androidx.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import androidx.annotation.Nullable;
 
 import com.techyourchance.unittesting.R;
 import com.techyourchance.unittesting.questions.Question;

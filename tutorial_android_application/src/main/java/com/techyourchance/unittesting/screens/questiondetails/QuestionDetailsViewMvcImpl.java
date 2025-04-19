@@ -1,12 +1,13 @@
 package com.techyourchance.unittesting.screens.questiondetails;
 
-import androidx.appcompat.widget.Toolbar;
 import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+
+import androidx.appcompat.widget.Toolbar;
 
 import com.techyourchance.unittesting.R;
 import com.techyourchance.unittesting.questions.QuestionDetails;

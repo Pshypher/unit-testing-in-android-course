@@ -1,8 +1,9 @@
 package com.techyourchance.unittesting.screens.common;
 
-import androidx.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
+
+import androidx.annotation.Nullable;
 
 import com.techyourchance.unittesting.screens.common.navdrawer.NavDrawerHelper;
 import com.techyourchance.unittesting.screens.common.navdrawer.NavDrawerViewMvc;

@@ -1,13 +1,18 @@
 package com.techyourchance.unittesting.screens.questiondetails;
 
 import android.os.Bundle;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
+import com.techyourchance.unittesting.questions.FetchQuestionDetailsUseCase;
+import com.techyourchance.unittesting.questions.QuestionDetails;
 import com.techyourchance.unittesting.screens.common.controllers.BaseFragment;
+import com.techyourchance.unittesting.screens.common.screensnavigator.ScreensNavigator;
+import com.techyourchance.unittesting.screens.common.toastshelper.ToastsHelper;
 
 public class QuestionDetailsFragment extends BaseFragment implements
         FetchQuestionDetailsUseCase.Listener,

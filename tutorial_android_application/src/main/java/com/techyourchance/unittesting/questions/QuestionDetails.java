@@ -25,4 +25,20 @@ public class QuestionDetails {
     public String getBody() {
         return mBody;
     }
+
+    @Override
+    public final boolean equals(Object o) {
+        if (!(o instanceof QuestionDetails)) return false;
+
+        QuestionDetails that = (QuestionDetails) o;
+        return mId.equals(that.mId) && mTitle.equals(that.mTitle) && mBody.equals(that.mBody);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = mId.hashCode();
+        result = 31 * result + mTitle.hashCode();
+        result = 31 * result + mBody.hashCode();
+        return result;
+    }
 }

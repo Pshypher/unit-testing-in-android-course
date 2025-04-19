@@ -1,8 +1,9 @@
 package com.techyourchance.unittesting.screens.common.views;
 
 import android.content.Context;
-import androidx.annotation.StringRes;
 import android.view.View;
+
+import androidx.annotation.StringRes;
 
 public abstract class BaseViewMvc implements ViewMvc {
     
